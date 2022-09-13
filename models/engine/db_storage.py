@@ -40,19 +40,18 @@ class DBStorage:
                     'Review': Review
                   }
         dict = {}
-    
         if cls is None:
             for k, v in classes.items():
                 objects = self.__session.query(v).all()
                 if len(objects) > 0:
                     for obj in objects:
-                        key ='{}.{}'.format(obj.__class__.__name__, obj.id)
+                        key = '{}.{}'.format(obj.__class__.__name__, obj.id)
                         dict[key] = obj
             return dict
         else:
             if cls in classes.values():
                 for obj in self.__session.query(cls).all():
-                    key ='{}.{}'.format(obj.__class__.__name__, obj.id)
+                    key = '{}.{}'.format(obj.__class__.__name__, obj.id)
                     dict[key] = obj
             return dict
 
