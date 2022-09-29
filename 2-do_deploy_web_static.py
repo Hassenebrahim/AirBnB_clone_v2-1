@@ -8,7 +8,7 @@ Usage:
     -i my_ssh_private_key -u ubuntu
 """
 from fabric.api import env, put, run
-#import os.path
+import os.path
 env.hosts = ['3.238.230.209', '18.205.104.232']
 
 
@@ -16,8 +16,8 @@ def do_deploy(archive_path):
     """
     Deploy archive to web server
     """
-    # if os.path.isfile(archive_path) is False:
-    #     return False
+    if os.path.isfile(archive_path) is False:
+        return False
     try:
         filename = archive_path.split("/")[-1]
         no_ext = filename.split(".")[0]
