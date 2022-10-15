@@ -32,7 +32,7 @@ def pythoniscool(text="is cool"):
     string "is cool" or at the /python/<text> route
     """
     new = text.replace('_', ' ')
-    return "python %s" % escape(new)
+    return "Python %s" % escape(new)
 
 
 if __name__ == "__main__":
