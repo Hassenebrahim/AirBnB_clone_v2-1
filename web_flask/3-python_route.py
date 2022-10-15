@@ -25,10 +25,9 @@ def message(text):
     return "C %s" % escape(new_str)
 
 
-@app.route("/python/", defaults={
-    'text': 'is cool'}, strict_slashes=False)
+@app.route("/python", strict_slashes=False)
 @app.route("/python/<text>")
-def pythoniscool(text):
+def pythoniscool(text="is cool"):
     """Retun string at the /python route with default
     string "is cool" or at the /python/<text> route
     """
