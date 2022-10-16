@@ -9,7 +9,10 @@ import models
 from models.state import State
 from models.city import City
 from models.base_model import Base
-
+from models.amenity import Amenity
+from models.review import Review
+from models.user import User
+from models.place import Place
 
 class DBStorage:
     '''
