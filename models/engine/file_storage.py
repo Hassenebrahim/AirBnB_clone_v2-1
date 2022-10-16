@@ -17,13 +17,10 @@ class FileStorage:
         '''
             Return the dictionary
         '''
-        new_dict = {}
-        if cls is None:
-            return self.__objects
-
         if cls != "":
             if type(cls) == str:
                 cls = eval(cls)
+            new_dict = {}
             for k, v in self.__objects.items():
                 if cls == k.split(".")[0]:
                     new_dict[k] = v
