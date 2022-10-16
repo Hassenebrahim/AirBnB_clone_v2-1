@@ -30,8 +30,9 @@ class State(BaseModel, Base):
                 State.id
                 FileStorage relationship between State and City
             '''
+            print("accesses***************8")
             list_cities = []
-            for city in models.storage.all("City").values():
+            for city in list(models.storage.all(models.city.City).values()):
                 if city.state_id == self.id:
                     list_cities.append(city)
             return list_cities
