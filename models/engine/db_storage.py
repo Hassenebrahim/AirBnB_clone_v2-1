@@ -14,6 +14,7 @@ from models.review import Review
 from models.user import User
 from models.place import Place
 
+
 class DBStorage:
     '''
         Create SQLalchemy database
